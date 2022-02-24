@@ -1,0 +1,48 @@
+<html>
+    <header>
+
+    </header>
+    <body>
+
+
+        <h1 id="realtime">
+
+        </h1>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        
+        <script>
+            const firebaseConfig = {
+              apiKey: "AIzaSyCM8jGVAuLInEF5DoDcT8l9Mwy13bI4dAs",
+              authDomain: "senac-30adc.firebaseapp.com",
+              databaseURL: "https://senac-30adc-default-rtdb.firebaseio.com",
+              projectId: "senac-30adc",
+              storageBucket: "senac-30adc.appspot.com",
+              messagingSenderId: "478514850767",
+              appId: "1:478514850767:web:4745799d3ff848943700ba",
+              measurementId: "G-43QGZFTTKR"
+            };
+          
+            // Initialize Firebase
+           
+           
+            const app = firebase.initializeApp(firebaseConfig);
+            
+
+
+
+            var realtime = document.getElementById('realtime');
+
+            var bd = firebase.database().ref().child('text');
+           
+           //para inserir no bd
+          // firebase.database().ref('text').set('inserindo');
+        
+             bd.on('value',snap => realtime.innerText = snap.val());
+
+            
+
+          </script>
+
+    </body>
+</html>
